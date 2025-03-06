@@ -1,0 +1,9 @@
+<form action="/update/<%= expense._id %>?_method=PUT" method="POST">
+    <label for="type">Type:</label>
+    <input type="text" name="type" value="<%= expense.type %>">
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" value="<%= expense.amount %>">
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="<%= expense.description %>">
+    <button type="submit">Update</button>
+</form>

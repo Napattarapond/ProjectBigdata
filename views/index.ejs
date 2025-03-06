@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <h1>Expense Tracker</h1>
+    <a href="/new">Add New Expense</a>
+    <ul>
+        <% expenses.forEach(expense => { %>
+            <li>
+                <%= expense.type %> -
+                    <%= expense.amount %> -
+                        <%= expense.description %>
+                            <a href="/edit/<%= expense._id %>">Edit</a>
+                            <form action="/delete/<%= expense._id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+            </li>
+            <% }); %>
+    </ul>
+</body>
+
+</html>
